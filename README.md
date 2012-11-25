@@ -4,7 +4,7 @@ bingoboards
 A little tool to make bingo boards easily.  It will make you a set of bingo boards that guarantee no ties.
 
 Installing:
-```bash
+```bash 
 $ git clone git://github.com/DanielBaird/bingoboards.git
 [... git does things ...]
 $ cd bingoboards
@@ -17,19 +17,19 @@ Usage: bingo [options]
 
 A simple example:
 ```bash
-$ ruby bingo.rb -s3 -b2
+$ ruby bingo.rb --size 3 --boards 2
 
 2 boards of size 3x3, no ties:
 (use -h to see how to change settings)
 
-  9    6    5  
-  8    4    3  
-  7    2    1  
+ 2  4  8 
+ 1  6  7 
+ 3  5  9 
 
-  4    8    2  
-  6    7    5  
-  9    1    3
-```
+ 9  4  3 
+ 8  6  2 
+ 5  1  7
+ ```
 
 
 

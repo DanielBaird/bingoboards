@@ -1,11 +1,19 @@
 
 class BingoBoard
     # -----------------------------------------------------
-    def self.make_boards(number, size = 5, symbols = nil)
+    def self.make_boards(number, size = 5, symbols = nil, show_progress = false)
         boards = []
         linepool = []
 
+        spinner = %w[ | / - \\ ]
+        progress = 0
+        back = "\033[1D"
+
+        print spinner[0] if show_progress
+
         while boards.length < number do
+
+            print back + spinner[(progress += 1) % spinner.length] if show_progress
 
             new_board = BingoBoard.new size
 
@@ -15,13 +23,19 @@ class BingoBoard
             end
 
             if found_copy
+                # then go around again
             else
+                print back + '. ' if show_progress
                 linepool.concat new_board.lines
                 boards << new_board
             end
         end
 
         boards
+    end
+    # -----------------------------------------------------
+    def cell(row, column)
+        @board[row][column]
     end
     # -----------------------------------------------------
     def initialize(size, symbols = nil)
@@ -49,10 +63,11 @@ class BingoBoard
     end
     # -----------------------------------------------------
     def show
+        sym_width = @symbols.inject(0) {|max, sym| (sym.to_s.length > max) ? (sym.to_s.length) : (max) }
         puts ""
         @board.each do |row|
             row.each do |symbol|
-                print symbol.to_s.center(5)
+                print " %#{sym_width}s " % [symbol.to_s]
             end
             puts ""
         end
