@@ -1,0 +1,91 @@
+<html>
+<head>
+    <style>
+        html, body {
+        }
+        * {
+            text-align: center;
+            -webkit-print-color-adjust: exact;
+        }
+        h1, h2 {
+            font-family: 'Savoye LET';
+            color: rgba(0,50,250, 0.75);
+            padding: 0;
+            margin: 0;
+        }
+        h1 {
+            margin: 0;
+            padding: 1em 0 0;
+            font-size: 600%;
+        }
+        h2 {
+            margin: -1em 0 1em 0;
+        }
+        hr {
+            page-break-after: always;
+            opacity: 0;
+        }
+
+
+        .bingoboard-wrapper {
+            margin: 0 auto;
+            xwidth: 158mm; /* 158mm will fit on A4 and US Letter sized paper with a 1 inch margin */
+            xheight: 158mm;
+            page-break-after: always;
+        }
+        .bingoboard {
+            margin: 0 auto;
+        }
+        .bingoboard td {
+            position: relative;
+            background: #fff;
+            width: 26mm;
+            height: 26mm;
+            overflow: hidden;
+            border-radius: 3mm;
+            box-shadow: 0 0 5px #666;
+            padding: 0;
+            margin: 0;
+        }
+        .bingoboard td img {
+            position: absolute;
+            background: #fff;
+            width: 24mm;
+            height: 24mm;
+            top: 50%;
+            left: 50%;
+            margin-left: -12mm;
+            margin-top: -12mm;
+            border-radius: 2.5mm;
+        }
+
+        .card {
+            font-family: 'Optima';
+            line-height: 1.4;
+            font-weight: bold;
+            text-align: center;
+            display: block;
+            float: left;
+            margin: 0;
+            background: #fff;
+            width: 50mm;
+            height: 70mm;
+            padding: 0;
+            overflow: hidden;
+            border-radius: 1mm;
+            border: 0.5mm solid #999;
+        }
+        .card img {
+            display: block;
+            width: 40mm;
+            height: 40mm;
+            border-radius: 2.5mm;
+            margin: 5mm auto;
+        }
+        .card .caption {
+            padding: 0 10mm;
+        }
+
+    </style>
+</head>
+<body>
